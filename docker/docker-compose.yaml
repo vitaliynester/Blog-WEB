@@ -21,7 +21,7 @@ services:
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
     links:
       - postgres
-    command: "symfony serve --allow-http --no-tls --port=9000"
+    command: bash -c "cd /var/www/blog && composer install && symfony serve --allow-http --no-tls --port=9000"
   nginx:
     container_name: blog_nginx
     restart: always
