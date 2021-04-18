@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
+     * Обработчик для главной страницы
      * @Route("/", name="app")
      */
     public function index(): Response
