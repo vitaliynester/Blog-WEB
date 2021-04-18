@@ -1,0 +1,11 @@
+// Глобальные стили и константы
+@import 'globals.scss';
+@import 'variables.scss';
+
+// Стили для компонентов
+@import 'header.scss';
+
+// Стили для страниц
+@import 'login.scss';
+@import 'register.scss';
+@import 'home.scss';
