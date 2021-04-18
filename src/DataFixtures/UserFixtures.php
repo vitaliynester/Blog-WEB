@@ -9,13 +9,22 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
 {
+    // Сущность для преобразования "сырого" пароля в захэшированный вид
     private UserPasswordEncoderInterface $passwordEncoder;
 
+    /**
+     * UserFixtures constructor.
+     * @param UserPasswordEncoderInterface $encoder (сущность для преобразования паролей в правильный вид для БД)
+     */
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
         $this->passwordEncoder = $encoder;
     }
 
+    /**
+     * Метод для загрузки фикстуры (подготовленных данных) в базу данных
+     * @param ObjectManager $manager (менеджер доктрины для взаимодействия с БД)
+     */
     public function load(ObjectManager $manager)
     {
         // Создание пользователя с правами администратора
