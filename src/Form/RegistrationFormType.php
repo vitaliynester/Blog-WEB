@@ -32,7 +32,7 @@ class RegistrationFormType extends AbstractType
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
-                        'message' => 'Допустимы только русские буквы, пробелы и дефисы',
+                        'message' => 'Для имени допустимы только русские буквы, пробелы и дефисы',
                     ])
                 ],
                 'label' => 'Имя',
@@ -51,7 +51,7 @@ class RegistrationFormType extends AbstractType
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
-                        'message' => 'Допустимы только русские буквы, пробелы и дефисы'
+                        'message' => 'Для фамилии допустимы только русские буквы, пробелы и дефисы'
                     ])
                 ],
                 'label' => 'Фамилия',
@@ -70,7 +70,7 @@ class RegistrationFormType extends AbstractType
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
-                        'message' => 'Допустимы только русские буквы, пробелы и дефисы'
+                        'message' => 'Для отчества допустимы только русские буквы, пробелы и дефисы'
                     ])
                 ],
                 'label' => 'Отчество',
