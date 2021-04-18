@@ -1,24 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Регистрация нового аккаунта{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+    <div class="container">
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
 
-    <h1>Регистрация</h1>
+        {{ form_start(registrationForm) }}
+        {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+        {% if formErrors|length %}
+            <div class="alert alert-danger">
+                {% for error in formErrors %}
+                    <div>
+                        {{ error.message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.lastName) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.patronymic) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="form-group">
+            {{ form_label(registrationForm.lastName, null, form_errors(registrationForm.lastName)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+            {{ form_widget(registrationForm.lastName, form_errors(registrationForm.lastName)|length ? {'attr': {'class': 'form-control is-invalid'}} : {'attr': {'class': 'form-control'}} ) }}
+            <span class="text-danger register__error-label">{{ form_errors(registrationForm.lastName) }}</span>
+        </div>
 
-        <button type="submit" class="btn">Зарегистрироваться</button>
-    {{ form_end(registrationForm) }}
+        <div class="form-group">
+            {{ form_label(registrationForm.firstName, null, form_errors(registrationForm.firstName)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+            {{ form_widget(registrationForm.firstName, form_errors(registrationForm.firstName)|length ? {'attr': {'class': 'form-control is-invalid'}} : {'attr': {'class': 'form-control'}} ) }}
+            <span class="text-danger register__error-label">{{ form_errors(registrationForm.firstName) }}</span>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(registrationForm.patronymic, null, form_errors(registrationForm.patronymic)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+            {{ form_widget(registrationForm.patronymic, form_errors(registrationForm.patronymic)|length ? {'attr': {'class': 'form-control is-invalid'}} : {'attr': {'class': 'form-control'}} ) }}
+            <span class="text-danger register__error-label">{{ form_errors(registrationForm.patronymic) }}</span>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(registrationForm.email, null, form_errors(registrationForm.email)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+            {{ form_widget(registrationForm.email, form_errors(registrationForm.email)|length ? {'attr': {'class': 'form-control is-invalid'}} : {'attr': {'class': 'form-control'}} ) }}
+            <span class="text-danger register__error-label">{{ form_errors(registrationForm.email) }}</span>
+        </div>
+
+        {% for passwordField in registrationForm.plainPassword %}
+            <div class="form-group">
+                {{ form_label(passwordField, null, form_errors(passwordField)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+                {{ form_widget(passwordField, form_errors(passwordField)|length ? {'attr': {'class': 'form-control is-invalid'}} : {'attr': {'class': 'form-control'}} ) }}
+                <span class="text-danger register__error-label">{{ form_errors(passwordField) }}</span>
+            </div>
+        {% endfor %}
+
+        <div class="form-group form-check p-0">
+            {{ form_widget(registrationForm.agreeTerms) }}
+            <label class="auth__helped-label" for="personal_data">Я согласен с использованием </label>
+            <a href="https://www.youtube.com/watch?v=NeNtRWaPT38">моих персональных данных</a>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary login__btn">Зарегистрироваться</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
