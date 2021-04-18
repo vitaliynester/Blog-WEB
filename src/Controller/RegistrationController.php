@@ -18,8 +18,12 @@ class RegistrationController extends AbstractController
      * Обработчик для страницы регистрации
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, UserAuthenticator $authenticator)
-    {
+    public function register(
+        Request $request,
+        UserPasswordEncoderInterface $passwordEncoder,
+        GuardAuthenticatorHandler $guardHandler,
+        UserAuthenticator $authenticator
+    ) {
         // Если пользователь уже авторизован, то редиректим на главную страницу
         // Тем самым, ограничиваем доступ к странице регистрации
         if ($this->getUser() !== null) {

@@ -121,7 +121,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-                'first_options'  => [
+                'first_options' => [
                     'label' => 'Пароль',
                     'attr' => [
                         'class' => 'validate'
@@ -134,8 +134,7 @@ class RegistrationFormType extends AbstractType
                     ]
                 ],
                 'invalid_message' => 'Пароли не совпадают!'
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
