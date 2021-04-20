@@ -46,13 +46,13 @@ class User implements UserInterface
      * Фамилия пользователя
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $last_name;
+    private ?string $lastName;
 
     /**
      * Имя пользователя
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $first_name;
+    private ?string $firstName;
 
     /**
      * Отчество пользователя
@@ -176,17 +176,17 @@ class User implements UserInterface
      */
     public function getLastName(): ?string
     {
-        return $this->last_name;
+        return $this->lastName;
     }
 
     /**
      * Метод для установки фамилии пользователя
-     * @param string $last_name (новая фамилия пользователя)
+     * @param string $lastName (новая фамилия пользователя)
      * @return $this (сущность пользователя после указания новой фамилии)
      */
-    public function setLastName(string $last_name): self
+    public function setLastName(string $lastName): self
     {
-        $this->last_name = $last_name;
+        $this->lastName = $lastName;
 
         return $this;
     }
@@ -197,17 +197,17 @@ class User implements UserInterface
      */
     public function getFirstName(): ?string
     {
-        return $this->first_name;
+        return $this->firstName;
     }
 
     /**
      * Метод для установки нового имени пользователя
-     * @param string $first_name (новое имя пользователя)
+     * @param string $firstName (новое имя пользователя)
      * @return $this (сущность пользователя после указания нового имени)
      */
-    public function setFirstName(string $first_name): self
+    public function setFirstName(string $firstName): self
     {
-        $this->first_name = $first_name;
+        $this->firstName = $firstName;
 
         return $this;
     }
