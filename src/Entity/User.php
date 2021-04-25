@@ -84,6 +84,7 @@ class User implements UserInterface
     {
         $this->posts = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->roles = ['ROLE_USER'];
     }
 
     /**
