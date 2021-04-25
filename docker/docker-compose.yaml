@@ -10,18 +10,20 @@ services:
       - ./postgres/db.env
     volumes:
       - ./var/lib/postgresql/data:/var/lib/postgresql/data
+
   php:
     container_name: blog_site
     build: php-fpm
     restart: always
     ports:
-      - '9002:9000'
+      - '9000:9000'
     volumes:
       - ../.:/var/www/blog:cached
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
     links:
       - postgres
-    command: bash -c "cd /var/www/blog && composer install && symfony serve --allow-http --no-tls --port=9000"
+    command: bash -c "cd /var/www/blog && composer install && php-fpm && symfony serve --allow-http --no-tls --port=9000"
+
   nginx:
     container_name: blog_nginx
     restart: always
@@ -34,3 +36,4 @@ services:
       - ../.:/var/www/blog:cached
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ./var/logs/nginx/:/var/log/nginx:cached
+
