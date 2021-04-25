@@ -11,6 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Сущность пользователя
+ *
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  * @UniqueEntity(fields={"email"}, message="Аккаунт с данным email уже существует!")
@@ -19,26 +20,30 @@ class User implements UserInterface
 {
     /**
      * Идентификатор пользователя
+     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private ?int $id;
+    private $id;
 
     /**
      * Электронная почта пользователя
+     *
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private ?string $email;
 
     /**
      * Роль пользователя (обычный пользователь или администратор)
+     *
      * @ORM\Column(type="json")
      */
     private array $roles = [];
 
     /**
      * Хэш пароль пользователя
+     *
      * @var string (захэшированный пароль)
      * @ORM\Column(type="string")
      */
@@ -46,18 +51,21 @@ class User implements UserInterface
 
     /**
      * Фамилия пользователя
+     *
      * @ORM\Column(type="string", length=255)
      */
     private ?string $lastName;
 
     /**
      * Имя пользователя
+     *
      * @ORM\Column(type="string", length=255)
      */
     private ?string $firstName;
 
     /**
      * Отчество пользователя
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private ?string $patronymic;
@@ -65,12 +73,12 @@ class User implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="owner", orphanRemoval=true)
      */
-    private ArrayCollection $posts;
+    private Collection $posts;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="owner", orphanRemoval=true)
      */
-    private ArrayCollection $comments;
+    private Collection $comments;
 
     public function __construct()
     {
@@ -80,6 +88,7 @@ class User implements UserInterface
 
     /**
      * Метод для получения идентификатора пользователя
+     *
      * @return int|null (идентификатор пользователя, если NULL - пользователь не находится в БД)
      */
     public function getId(): ?int
@@ -89,6 +98,7 @@ class User implements UserInterface
 
     /**
      * Метод для получения электронной почта пользователя
+     *
      * @return string|null (электронная почта пользователя, если NULL - пользователь не находится в БД)
      */
     public function getEmail(): ?string
@@ -98,7 +108,9 @@ class User implements UserInterface
 
     /**
      * Метод для установки нового значения электронной почты
+     *
      * @param string $email (новое значение для электронной почты пользователя)
+     *
      * @return $this (сущность пользователя после указания электронной почты)
      */
     public function setEmail(string $email): self
@@ -110,17 +122,21 @@ class User implements UserInterface
 
     /**
      * Идентификатор пользователя по которому можно точно определить его (электронная почта)
+     *
      * @return string (электронная почта пользователя)
+     *
      * @see UserInterface
      */
     public function getUsername(): string
     {
-        return (string)$this->email;
+        return (string) $this->email;
     }
 
     /**
      * Получить массив с ролями пользователя (обычный пользователь или администратор)
+     *
      * @return array (массив с ролями пользователя)
+     *
      * @see UserInterface
      */
     public function getRoles(): array
@@ -134,7 +150,9 @@ class User implements UserInterface
 
     /**
      * Метод для установки новой/новых ролей для пользователя
+     *
      * @param array $roles (роли для пользователя)
+     *
      * @return $this (сущность пользователя после указания новых ролей)
      */
     public function setRoles(array $roles): self
@@ -146,17 +164,21 @@ class User implements UserInterface
 
     /**
      * Метод для получения хэша пароля
+     *
      * @return string (хэш пароль пользователя)
+     *
      * @see UserInterface
      */
     public function getPassword(): string
     {
-        return (string)$this->password;
+        return (string) $this->password;
     }
 
     /**
      * Метод для установки нового пароля для пользователя
+     *
      * @param string $password (новый пароль пользователя)
+     *
      * @return $this (сущность пользователя после указания нового пароля)
      */
     public function setPassword(string $password): self
@@ -170,7 +192,9 @@ class User implements UserInterface
      * Метод для получения соли, на данный момент не реализован
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
      * @return string|null (соль для хэширования пароля или NULL)
+     *
      * @see UserInterface
      */
     public function getSalt(): ?string
@@ -180,6 +204,7 @@ class User implements UserInterface
 
     /**
      * Метод для очистки значений полей формы указанных при регистрации, но не относящихся к сущности
+     *
      * @see UserInterface
      */
     public function eraseCredentials()
@@ -190,6 +215,7 @@ class User implements UserInterface
 
     /**
      * Метод для получения фамилии пользователя
+     *
      * @return string|null (фамилия пользователя, NULL - фамилия не указана)
      */
     public function getLastName(): ?string
@@ -199,7 +225,9 @@ class User implements UserInterface
 
     /**
      * Метод для установки фамилии пользователя
+     *
      * @param string $lastName (новая фамилия пользователя)
+     *
      * @return $this (сущность пользователя после указания новой фамилии)
      */
     public function setLastName(string $lastName): self
@@ -211,6 +239,7 @@ class User implements UserInterface
 
     /**
      * Метод для получения имени пользователя
+     *
      * @return string|null (имя пользователя, если NULL - имя не указано)
      */
     public function getFirstName(): ?string
@@ -220,7 +249,9 @@ class User implements UserInterface
 
     /**
      * Метод для установки нового имени пользователя
+     *
      * @param string $firstName (новое имя пользователя)
+     *
      * @return $this (сущность пользователя после указания нового имени)
      */
     public function setFirstName(string $firstName): self
@@ -232,6 +263,7 @@ class User implements UserInterface
 
     /**
      * Метод для получения отчества пользователя
+     *
      * @return string|null (отчество пользователя, если NULL - отчество не указано)
      */
     public function getPatronymic(): ?string
@@ -241,7 +273,9 @@ class User implements UserInterface
 
     /**
      * Метод для указания нового отчества пользователя
+     *
      * @param string|null $patronymic (отчество пользователя, если NULL - отчество не указано)
+     *
      * @return $this (сущность пользователя после указания нового отчества)
      */
     public function setPatronymic(?string $patronymic): self
