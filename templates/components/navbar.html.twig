@@ -7,6 +7,11 @@
             <li class="nav-item ">
                 <a class="nav-link" href="{{ path('about') }}">О нас</a>
             </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ path('admin') }}">Админка</a>
+                </li>
+            {% endif %}
             {% if app.user is null %}
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ path('app_login') }}">Войти</a>
