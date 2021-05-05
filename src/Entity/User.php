@@ -84,7 +84,6 @@ class User implements UserInterface
     {
         $this->posts = new ArrayCollection();
         $this->comments = new ArrayCollection();
-        $this->roles = ['ROLE_USER'];
     }
 
     /**
@@ -210,8 +209,6 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
     }
 
     /**
