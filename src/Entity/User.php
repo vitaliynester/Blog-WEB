@@ -212,6 +212,40 @@ class User implements UserInterface
     }
 
     /**
+     * Метод для получения отчества пользователя
+     *
+     * @return string|null (отчество пользователя, если NULL - отчество не указано)
+     */
+    public function getPatronymic(): ?string
+    {
+        return $this->patronymic;
+    }
+
+    /**
+     * Метод для указания нового отчества пользователя
+     *
+     * @param string|null $patronymic (отчество пользователя, если NULL - отчество не указано)
+     *
+     * @return $this (сущность пользователя после указания нового отчества)
+     */
+    public function setPatronymic(?string $patronymic): self
+    {
+        $this->patronymic = $patronymic;
+
+        return $this;
+    }
+
+    /**
+     * Метод для получения имени в комментарии
+     *
+     * @return string|null (имя пользователя в формате "Фамилия Имя")
+     */
+    public function getCommentName(): ?string
+    {
+        return self::getLastName() . ' ' . self::getFirstName();
+    }
+
+    /**
      * Метод для получения фамилии пользователя
      *
      * @return string|null (фамилия пользователя, NULL - фамилия не указана)
@@ -255,30 +289,6 @@ class User implements UserInterface
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Метод для получения отчества пользователя
-     *
-     * @return string|null (отчество пользователя, если NULL - отчество не указано)
-     */
-    public function getPatronymic(): ?string
-    {
-        return $this->patronymic;
-    }
-
-    /**
-     * Метод для указания нового отчества пользователя
-     *
-     * @param string|null $patronymic (отчество пользователя, если NULL - отчество не указано)
-     *
-     * @return $this (сущность пользователя после указания нового отчества)
-     */
-    public function setPatronymic(?string $patronymic): self
-    {
-        $this->patronymic = $patronymic;
 
         return $this;
     }
