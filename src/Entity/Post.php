@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OrderBy;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -23,6 +24,7 @@ class Post
     private $id;
 
     /**
+     * @Assert\Range(min="1", minMessage="Минимальное значение должно быть больше нуля!")
      * @ORM\Column(type="integer")
      */
     private ?int $timeOnRead;
@@ -38,6 +40,7 @@ class Post
     private ?string $body;
 
     /**
+     * @Assert\Range(min="0", minMessage="Минимальное значение должно быть неотрицательным!")
      * @ORM\Column(type="integer", options={"default" : 0})
      */
     private ?int $countView;
