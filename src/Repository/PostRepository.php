@@ -22,10 +22,10 @@ class PostRepository extends ServiceEntityRepository
     public function findByCommentCount(): array
     {
         $sql = '
-        SELECT p.id, p.owner_id, p.time_on_read, p.title, p.body, p.count_view, p.date_of_creation
+        SELECT p.id
         FROM post as p
         LEFT JOIN comment as c on p.id = c.post_id
-        GROUP BY p.id, p.owner_id, p.time_on_read, p.title, p.body, p.count_view, p.date_of_creation
+        GROUP BY p.id
         ORDER BY count(c.id) DESC
         ';
         $conn = $this->getEntityManager()
@@ -33,6 +33,14 @@ class PostRepository extends ServiceEntityRepository
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        $resultFromQuery = $stmt->fetchAll();
+        $repos = $this->getEntityManager()->getRepository('App:Post');
+        $result = [];
+        foreach ($resultFromQuery as $postRaw) {
+            $post = $repos->findOneBy(['id' => $postRaw['id']]);
+            $result[] = $post;
+        }
+
+        return $result;
     }
 }
