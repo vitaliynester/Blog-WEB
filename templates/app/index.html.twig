@@ -25,10 +25,15 @@
             </div>
         </div>
         <div class="col-8">
-            {{ include('components/post-card.html.twig') }}
-            {{ include('components/post-card.html.twig') }}
-            {{ include('components/post-card.html.twig') }}
-            {{ include('components/post-card.html.twig') }}
+            {% if posts is not empty %}
+                {% for post in posts %}
+                    {{ include('components/post-card.html.twig', {'post': post}) }}
+                {% endfor %}
+            {% else %}
+                <div class="text-center home">
+                    Постов не найдено!
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
