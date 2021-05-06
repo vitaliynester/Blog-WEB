@@ -48,8 +48,10 @@ class PostController extends AbstractController
      */
     public function show(Post $post): Response
     {
+        $comments = $post->getComments();
         return $this->render('post/show.html.twig', [
             'post' => $post,
+            'comments' => $comments,
         ]);
     }
 }
