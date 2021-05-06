@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Post;
+use App\Form\CommentType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
@@ -45,20 +48,39 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="post_show", methods={"GET"})
+     * @Route("/{id}", name="post_show", methods={"GET", "POST"})
      */
-    public function show(Post $post, Security $security): Response
+    public function show(Post $post, Security $security, Request $request): Response
     {
-        if ($post->getOwner() !== $security->getUser()) {
+        $user = $security->getUser();
+
+        $form = $this->createForm(CommentType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $commentBody = $form->get('commentBody')->getData();
+            $comment = new Comment();
+
+            $comment->setOwner($user);
+            $comment->setBody($commentBody);
+            $comment->setPost($post);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+        }
+
+        if ($post->getOwner() !== $user) {
             $post->incrementCountView();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
         }
-        $comments = $post->getComments();
+
         return $this->render('post/show.html.twig', [
             'post' => $post,
-            'comments' => $comments,
+            'comments' => $post->getComments(),
+            'comment_form' => $form->createView(),
         ]);
     }
 }
