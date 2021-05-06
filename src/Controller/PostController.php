@@ -21,30 +21,48 @@ class PostController extends AbstractController
     /**
      * @Route("/", name="post_index", methods={"GET"})
      */
-    public function index(PostRepository $postRepository): Response
+    public function index(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pagination = $paginator->paginate(
+            $postRepository->findBy([], ['dateOfCreation' => 'DESC']),
+            $request->query->getInt('page', 1),
+            6
+        );
         return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'title' => 'Все посты',
+            'posts' => $pagination,
         ]);
     }
 
     /**
      * @Route("/popular", name="post_popular", methods={"GET"})
      */
-    public function mostViewed(PostRepository $postRepository): Response
+    public function mostViewed(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pagination = $paginator->paginate(
+            $postRepository->findBy([], ['countView' => 'DESC']),
+            $request->query->getInt('page', 1),
+            6
+        );
         return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'title' => 'Самые просматриваемые',
+            'posts' => $pagination,
         ]);
     }
 
     /**
      * @Route("/discussed", name="post_discussed", methods={"GET"})
      */
-    public function mostDiscussed(PostRepository $postRepository): Response
+    public function mostDiscussed(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pagination = $paginator->paginate(
+            $postRepository->findByCommentCount(),
+            $request->query->getInt('page', 1),
+            6
+        );
         return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'title' => 'Самые обсуждаемые',
+            'posts' => $pagination,
         ]);
     }
 
