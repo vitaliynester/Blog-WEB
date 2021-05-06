@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+    <h1>Post</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>TimeOnRead</th>
+                <td>{{ post.timeOnRead }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ post.body }}</td>
+            </tr>
+            <tr>
+                <th>CountView</th>
+                <td>{{ post.countView }}</td>
+            </tr>
+            <tr>
+                <th>DateOfCreation</th>
+                <td>{{ post.dateOfCreation ? post.dateOfCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('post_index') }}">back to list</a>
+{% endblock %}
