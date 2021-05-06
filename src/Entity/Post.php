@@ -173,6 +173,9 @@ class Post
     public function getAnnotation()
     {
         $body = strip_tags($this->getBody());
+        if (strlen($body) > 250) {
+            return substr($body, 0, 250) . '...';
+        }
         return substr($body, 0, 250);
     }
 
