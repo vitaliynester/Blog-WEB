@@ -1,0 +1,20 @@
+.comment {
+    &__row {
+        align-items: baseline;
+        padding: 0px;
+        margin: 0px;    
+    }
+    &__owner {
+        color: #2998FF;
+        margin-right: 5px;
+        font-size: larger;
+    }
+    &__date {
+        opacity: 0.8;
+        font-size: small;
+    }
+    &__content {
+        font-weight: normal;
+        text-align: justify;
+    }
+}
