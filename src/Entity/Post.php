@@ -94,18 +94,6 @@ class Post
         return $this;
     }
 
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
-
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
-
-        return $this;
-    }
-
     public function incrementCountView()
     {
         $currentCountView = $this->getCountView();
@@ -178,6 +166,24 @@ class Post
                 $comment->setPost(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAnnotation()
+    {
+        $body = strip_tags($this->getBody());
+        return substr($body, 0, 250);
+    }
+
+    public function getBody(): ?string
+    {
+        return $this->body;
+    }
+
+    public function setBody(string $body): self
+    {
+        $this->body = $body;
 
         return $this;
     }
