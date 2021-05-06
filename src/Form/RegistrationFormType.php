@@ -27,18 +27,18 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Имя должно быть более 3 символов!',
-                        'max' => 255
+                        'max' => 255,
                     ]),
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
                         'message' => 'Для имени допустимы только русские буквы, пробелы и дефисы',
-                    ])
+                    ]),
                 ],
                 'label' => 'Имя',
                 'attr' => [
-                    'class' => 'validate'
-                ]
+                    'class' => 'validate',
+                ],
             ])
             ->add('lastName', null, [
                 'required' => true,
@@ -46,18 +46,18 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Фамилия должна быть более 3 символов!',
-                        'max' => 255
+                        'max' => 255,
                     ]),
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
-                        'message' => 'Для фамилии допустимы только русские буквы, пробелы и дефисы'
-                    ])
+                        'message' => 'Для фамилии допустимы только русские буквы, пробелы и дефисы',
+                    ]),
                 ],
                 'label' => 'Фамилия',
                 'attr' => [
-                    'class' => 'validate'
-                ]
+                    'class' => 'validate',
+                ],
             ])
             ->add('patronymic', null, [
                 'required' => false,
@@ -65,33 +65,33 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Отчество должна быть более 3 символов!',
-                        'max' => 255
+                        'max' => 255,
                     ]),
                     new Regex([
                         'match' => true,
                         'pattern' => '/^[а-яё -]+$/ui',
-                        'message' => 'Для отчества допустимы только русские буквы, пробелы и дефисы'
-                    ])
+                        'message' => 'Для отчества допустимы только русские буквы, пробелы и дефисы',
+                    ]),
                 ],
                 'label' => 'Отчество',
                 'attr' => [
-                    'class' => 'validate'
-                ]
+                    'class' => 'validate',
+                ],
             ])
             ->add('email', EmailType::class, [
                 'required' => true,
                 'constraints' => [
                     new Email([
-                        'message' => 'Некорректный Email!'
+                        'message' => 'Некорректный Email!',
                     ]),
                     new Length([
-                        'max' => 180
-                    ])
+                        'max' => 180,
+                    ]),
                 ],
                 'label' => 'Email',
                 'attr' => [
-                    'class' => 'validate'
-                ]
+                    'class' => 'validate',
+                ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'required' => true,
@@ -113,7 +113,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Regex([
                         'pattern' => '/[A-zА-я]+/',
-                        'message' => 'Пароль должен содержать латинские буквы!'
+                        'message' => 'Пароль должен содержать латинские буквы!',
                     ]),
                     new Length([
                         'min' => 6,
@@ -124,16 +124,16 @@ class RegistrationFormType extends AbstractType
                 'first_options' => [
                     'label' => 'Пароль',
                     'attr' => [
-                        'class' => 'validate'
-                    ]
+                        'class' => 'validate',
+                    ],
                 ],
                 'second_options' => [
                     'label' => 'Повторите пароль',
                     'attr' => [
-                        'class' => 'validate'
-                    ]
+                        'class' => 'validate',
+                    ],
                 ],
-                'invalid_message' => 'Пароли не совпадают!'
+                'invalid_message' => 'Пароли не совпадают!',
             ]);
     }
 
