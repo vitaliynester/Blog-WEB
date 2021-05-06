@@ -87,6 +87,7 @@ class PostController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();
+            return $this->redirectToRoute('post_show', ['id' => $post->getId()]);
         }
 
         if ($post->getOwner() !== $user) {
