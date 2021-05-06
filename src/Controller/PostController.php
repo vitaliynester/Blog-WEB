@@ -7,6 +7,7 @@ use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * @Route("/post")
@@ -46,8 +47,14 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}", name="post_show", methods={"GET"})
      */
-    public function show(Post $post): Response
+    public function show(Post $post, Security $security): Response
     {
+        if ($post->getOwner() !== $security->getUser()) {
+            $post->incrementCountView();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($post);
+            $entityManager->flush();
+        }
         $comments = $post->getComments();
         return $this->render('post/show.html.twig', [
             'post' => $post,
