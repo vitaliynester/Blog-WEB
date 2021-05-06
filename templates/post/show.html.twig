@@ -1,38 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <div class="container">
+        <div class="detail-post__row">
+            <div class="detail-post__row-pre">
+                Название:
+            </div>
+            <div class="detail-post__row-value">
+                {{ post.title }}
+            </div>
+        </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>TimeOnRead</th>
-                <td>{{ post.timeOnRead }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ post.title }}</td>
-            </tr>
-            <tr>
-                <th>Body</th>
-                <td>{{ post.body }}</td>
-            </tr>
-            <tr>
-                <th>CountView</th>
-                <td>{{ post.countView }}</td>
-            </tr>
-            <tr>
-                <th>DateOfCreation</th>
-                <td>{{ post.dateOfCreation ? post.dateOfCreation|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="detail-post__row">
+            <div class="detail-post__row-pre">
+                Дата:
+            </div>
+            <div class="detail-post__row-value">
+                {{ post.dateOfCreation|date('d.m.Y') }}
+            </div>
+        </div>
 
-    <a href="{{ path('post_index') }}">back to list</a>
+        <div class="detail-post__row">
+            <div class="detail-post__row-pre">
+                <img src="{{ asset('images/watch.svg') }}" alt="Количество просмотров">
+            </div>
+            <div class="detail-post__row-value">
+                {{ post.countView }}
+            </div>
+        </div>
+
+        <div class="detail-post__content">
+            {{ post.body | raw }}
+        </div>
+
+        <h2>Комментарии:</h2>
+
+        {% if comments is not empty %}
+            {% for comment in comments %}
+                {{ include('components/comment.html.twig', {'comment': comment}) }}
+            {% endfor %}
+        {% else %}
+            <div class="text-center">
+                Комментариев не найдено!
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
