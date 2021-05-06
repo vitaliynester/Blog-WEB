@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5fdc638166d9e6b1379efe698977f8d",
+    "content-hash": "7f51cead7cd05628510dc3850f50e51d",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -78,151 +78,6 @@
                 }
             ],
             "time": "2020-11-11T10:22:58+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "3.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
-                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.12.54",
-                "symfony/phpunit-bridge": "^4.2 || ^5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.4"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-11-13T08:59:24+00:00"
-        },
-        {
-            "name": "composer/xdebug-handler",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "31d57697eb1971712a08031cfaff5a846d10bdf5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/31d57697eb1971712a08031cfaff5a846d10bdf5",
-                "reference": "31d57697eb1971712a08031cfaff5a846d10bdf5",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0 || ^8.0",
-                "psr/log": "^1.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.12.55",
-                "symfony/phpunit-bridge": "^4.2 || ^5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Composer\\XdebugHandler\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "John Stevenson",
-                    "email": "john-stevenson@blueyonder.co.uk"
-                }
-            ],
-            "description": "Restarts a process without Xdebug.",
-            "keywords": [
-                "Xdebug",
-                "performance"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/xdebug-handler/issues",
-                "source": "https://github.com/composer/xdebug-handler/tree/2.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-04-09T19:40:06+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1730,115 +1585,6 @@
             "time": "2021-04-01T18:37:14+00:00"
         },
         {
-            "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "d5b8a9d852b292c2f8a035200fa6844b1f82300b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d5b8a9d852b292c2f8a035200fa6844b1f82300b",
-                "reference": "d5b8a9d852b292c2f8a035200fa6844b1f82300b",
-                "shasum": ""
-            },
-            "require": {
-                "composer/semver": "^1.4 || ^2.0 || ^3.0",
-                "composer/xdebug-handler": "^1.2 || ^2.0",
-                "doctrine/annotations": "^1.2",
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "php": "^5.6 || ^7.0 || ^8.0",
-                "php-cs-fixer/diff": "^1.3",
-                "symfony/console": "^3.4.43 || ^4.1.6 || ^5.0",
-                "symfony/event-dispatcher": "^3.0 || ^4.0 || ^5.0",
-                "symfony/filesystem": "^3.0 || ^4.0 || ^5.0",
-                "symfony/finder": "^3.0 || ^4.0 || ^5.0",
-                "symfony/options-resolver": "^3.0 || ^4.0 || ^5.0",
-                "symfony/polyfill-php70": "^1.0",
-                "symfony/polyfill-php72": "^1.4",
-                "symfony/process": "^3.0 || ^4.0 || ^5.0",
-                "symfony/stopwatch": "^3.0 || ^4.0 || ^5.0"
-            },
-            "require-dev": {
-                "justinrainbow/json-schema": "^5.0",
-                "keradus/cli-executor": "^1.4",
-                "mikey179/vfsstream": "^1.6",
-                "php-coveralls/php-coveralls": "^2.4.2",
-                "php-cs-fixer/accessible-object": "^1.0",
-                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.2",
-                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.2.1",
-                "phpspec/prophecy-phpunit": "^1.1 || ^2.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.13 || ^9.5",
-                "phpunitgoodpractices/polyfill": "^1.5",
-                "phpunitgoodpractices/traits": "^1.9.1",
-                "sanmai/phpunit-legacy-adapter": "^6.4 || ^8.2.1",
-                "symfony/phpunit-bridge": "^5.2.1",
-                "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
-            },
-            "suggest": {
-                "ext-dom": "For handling output formats in XML",
-                "ext-mbstring": "For handling non-UTF8 characters.",
-                "php-cs-fixer/phpunit-constraint-isidenticalstring": "For IsIdenticalString constraint.",
-                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "For XmlMatchesXsd constraint.",
-                "symfony/polyfill-mbstring": "When enabling `ext-mbstring` is not possible."
-            },
-            "bin": [
-                "php-cs-fixer"
-            ],
-            "type": "application",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.19-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpCsFixer\\": "src/"
-                },
-                "classmap": [
-                    "tests/Test/AbstractFixerTestCase.php",
-                    "tests/Test/AbstractIntegrationCaseFactory.php",
-                    "tests/Test/AbstractIntegrationTestCase.php",
-                    "tests/Test/Assert/AssertTokensTrait.php",
-                    "tests/Test/IntegrationCase.php",
-                    "tests/Test/IntegrationCaseFactory.php",
-                    "tests/Test/IntegrationCaseFactoryInterface.php",
-                    "tests/Test/InternalIntegrationCaseFactory.php",
-                    "tests/Test/IsIdenticalConstraint.php",
-                    "tests/Test/TokensWithObservedTransformers.php",
-                    "tests/TestCase.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Dariusz Rumiński",
-                    "email": "dariusz.ruminski@gmail.com"
-                }
-            ],
-            "description": "A tool to automatically fix PHP code style",
-            "support": {
-                "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.19.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/keradus",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-05-03T21:43:24+00:00"
-        },
-        {
             "name": "friendsofphp/proxy-manager-lts",
             "version": "v1.0.3",
             "source": {
@@ -1919,6 +1665,159 @@
                 }
             ],
             "time": "2021-01-14T21:52:44+00:00"
+        },
+        {
+            "name": "knplabs/knp-components",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components.git",
+                "reference": "7db2eb032591ded5809455af8a4dfdfda079041c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/7db2eb032591ded5809455af8a4dfdfda079041c",
+                "reference": "7db2eb032591ded5809455af8a4dfdfda079041c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0",
+                "symfony/event-dispatcher-contracts": "^1.1 || ^2.0",
+                "symfony/http-foundation": "^4.4 || ^5.1"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "^2.0",
+                "doctrine/orm": "^2.7",
+                "doctrine/phpcr-odm": "^1.2",
+                "ext-pdo_sqlite": "*",
+                "jackalope/jackalope-doctrine-dbal": "^1.2",
+                "phpunit/phpunit": "^9.5",
+                "ruflin/elastica": "^7.0",
+                "symfony/http-kernel": "^4.4 || ^5.1",
+                "symfony/property-access": "^4.4 || ^5.1"
+            },
+            "suggest": {
+                "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+                "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+                "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+                "doctrine/phpcr-odm": "to allow usage pagination with Doctrine ODM PHPCR",
+                "propel/propel1": "to allow usage pagination with Propel ORM",
+                "ruflin/elastica": "to allow usage pagination with ElasticSearch Client",
+                "solarium/solarium": "to allow usage pagination with Solarium Client",
+                "symfony/property-access": "To allow sorting arrays"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Component\\": "src/Knp/Component"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "https://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "components",
+                "knp",
+                "knplabs",
+                "pager",
+                "paginator"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/knp-components/issues",
+                "source": "https://github.com/KnpLabs/knp-components/tree/v3.0.2"
+            },
+            "time": "2021-03-16T13:52:01+00:00"
+        },
+        {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "v5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+                "reference": "8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7",
+                "reference": "8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-components": "^2.4 || ^3.0",
+                "php": "^7.3 || ^8.0",
+                "symfony/config": "^4.4 || ^5.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.0",
+                "symfony/http-foundation": "^4.4 || ^5.0",
+                "symfony/http-kernel": "^4.4 || ^5.0",
+                "symfony/routing": "^4.4 || ^5.0",
+                "symfony/translation": "^4.4 || ^5.0",
+                "twig/twig": "^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5 || ^9.4",
+                "symfony/expression-language": "^4.4 || ^5.0",
+                "symfony/templating": "^4.4 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\PaginatorBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "pager",
+                "pagination",
+                "paginator",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/KnpPaginatorBundle/issues",
+                "source": "https://github.com/KnpLabs/KnpPaginatorBundle/tree/v5.4.2"
+            },
+            "time": "2020-12-17T08:19:16+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -2270,61 +2169,6 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.5"
             },
             "time": "2021-05-03T19:11:20+00:00"
-        },
-        {
-            "name": "php-cs-fixer/diff",
-            "version": "v1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHP-CS-Fixer/diff.git",
-                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/dbd31aeb251639ac0b9e7e29405c1441907f5759",
-                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7.23 || ^6.4.3 || ^7.0",
-                "symfony/process": "^3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
-                },
-                {
-                    "name": "Kore Nordmann",
-                    "email": "mail@kore-nordmann.de"
-                },
-                {
-                    "name": "SpacePossum"
-                }
-            ],
-            "description": "sebastian/diff v2 backport support for PHP5.6",
-            "homepage": "https://github.com/PHP-CS-Fixer",
-            "keywords": [
-                "diff"
-            ],
-            "support": {
-                "issues": "https://github.com/PHP-CS-Fixer/diff/issues",
-                "source": "https://github.com/PHP-CS-Fixer/diff/tree/v1.3.1"
-            },
-            "time": "2020-10-14T08:39:05+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -5698,74 +5542,6 @@
             "time": "2021-01-22T09:19:47+00:00"
         },
         {
-            "name": "symfony/polyfill-php70",
-            "version": "v1.20.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/5f03a781d984aae42cebd18e7912fa80f02ee644",
-                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.20-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php70/tree/v1.20.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-10-23T14:02:19+00:00"
-        },
-        {
             "name": "symfony/polyfill-php73",
             "version": "v1.22.1",
             "source": {
@@ -8223,6 +7999,151 @@
     ],
     "packages-dev": [
         {
+            "name": "composer/semver",
+            "version": "3.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
+                "reference": "a02fdf930a3c1c3ed3a49b5f63859c0c20e10464",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.54",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/3.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-13T08:59:24+00:00"
+        },
+        {
+            "name": "composer/xdebug-handler",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/xdebug-handler.git",
+                "reference": "31d57697eb1971712a08031cfaff5a846d10bdf5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/31d57697eb1971712a08031cfaff5a846d10bdf5",
+                "reference": "31d57697eb1971712a08031cfaff5a846d10bdf5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.55",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\XdebugHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Stevenson",
+                    "email": "john-stevenson@blueyonder.co.uk"
+                }
+            ],
+            "description": "Restarts a process without Xdebug.",
+            "keywords": [
+                "Xdebug",
+                "performance"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/xdebug-handler/issues",
+                "source": "https://github.com/composer/xdebug-handler/tree/2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-04-09T19:40:06+00:00"
+        },
+        {
             "name": "doctrine/data-fixtures",
             "version": "1.5.0",
             "source": {
@@ -8379,6 +8300,170 @@
                 }
             ],
             "time": "2020-11-14T09:36:49+00:00"
+        },
+        {
+            "name": "friendsofphp/php-cs-fixer",
+            "version": "v2.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
+                "reference": "d5b8a9d852b292c2f8a035200fa6844b1f82300b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d5b8a9d852b292c2f8a035200fa6844b1f82300b",
+                "reference": "d5b8a9d852b292c2f8a035200fa6844b1f82300b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/semver": "^1.4 || ^2.0 || ^3.0",
+                "composer/xdebug-handler": "^1.2 || ^2.0",
+                "doctrine/annotations": "^1.2",
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": "^5.6 || ^7.0 || ^8.0",
+                "php-cs-fixer/diff": "^1.3",
+                "symfony/console": "^3.4.43 || ^4.1.6 || ^5.0",
+                "symfony/event-dispatcher": "^3.0 || ^4.0 || ^5.0",
+                "symfony/filesystem": "^3.0 || ^4.0 || ^5.0",
+                "symfony/finder": "^3.0 || ^4.0 || ^5.0",
+                "symfony/options-resolver": "^3.0 || ^4.0 || ^5.0",
+                "symfony/polyfill-php70": "^1.0",
+                "symfony/polyfill-php72": "^1.4",
+                "symfony/process": "^3.0 || ^4.0 || ^5.0",
+                "symfony/stopwatch": "^3.0 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "justinrainbow/json-schema": "^5.0",
+                "keradus/cli-executor": "^1.4",
+                "mikey179/vfsstream": "^1.6",
+                "php-coveralls/php-coveralls": "^2.4.2",
+                "php-cs-fixer/accessible-object": "^1.0",
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.2",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.2.1",
+                "phpspec/prophecy-phpunit": "^1.1 || ^2.0",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.13 || ^9.5",
+                "phpunitgoodpractices/polyfill": "^1.5",
+                "phpunitgoodpractices/traits": "^1.9.1",
+                "sanmai/phpunit-legacy-adapter": "^6.4 || ^8.2.1",
+                "symfony/phpunit-bridge": "^5.2.1",
+                "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "ext-dom": "For handling output formats in XML",
+                "ext-mbstring": "For handling non-UTF8 characters.",
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "For IsIdenticalString constraint.",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "For XmlMatchesXsd constraint.",
+                "symfony/polyfill-mbstring": "When enabling `ext-mbstring` is not possible."
+            },
+            "bin": [
+                "php-cs-fixer"
+            ],
+            "type": "application",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.19-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpCsFixer\\": "src/"
+                },
+                "classmap": [
+                    "tests/Test/AbstractFixerTestCase.php",
+                    "tests/Test/AbstractIntegrationCaseFactory.php",
+                    "tests/Test/AbstractIntegrationTestCase.php",
+                    "tests/Test/Assert/AssertTokensTrait.php",
+                    "tests/Test/IntegrationCase.php",
+                    "tests/Test/IntegrationCaseFactory.php",
+                    "tests/Test/IntegrationCaseFactoryInterface.php",
+                    "tests/Test/InternalIntegrationCaseFactory.php",
+                    "tests/Test/IsIdenticalConstraint.php",
+                    "tests/Test/TokensWithObservedTransformers.php",
+                    "tests/TestCase.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Dariusz Rumiński",
+                    "email": "dariusz.ruminski@gmail.com"
+                }
+            ],
+            "description": "A tool to automatically fix PHP code style",
+            "support": {
+                "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.19.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/keradus",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-03T21:43:24+00:00"
+        },
+        {
+            "name": "php-cs-fixer/diff",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-CS-Fixer/diff.git",
+                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/dbd31aeb251639ac0b9e7e29405c1441907f5759",
+                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3 || ^7.0",
+                "symfony/process": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "SpacePossum"
+                }
+            ],
+            "description": "sebastian/diff v2 backport support for PHP5.6",
+            "homepage": "https://github.com/PHP-CS-Fixer",
+            "keywords": [
+                "diff"
+            ],
+            "support": {
+                "issues": "https://github.com/PHP-CS-Fixer/diff/issues",
+                "source": "https://github.com/PHP-CS-Fixer/diff/tree/v1.3.1"
+            },
+            "time": "2020-10-14T08:39:05+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -8838,6 +8923,74 @@
                 }
             ],
             "time": "2021-04-11T22:55:21+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php70",
+            "version": "v1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php70.git",
+                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/5f03a781d984aae42cebd18e7912fa80f02ee644",
+                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php70/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T14:02:19+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",
