@@ -6,6 +6,7 @@ use App\Entity\Comment;
 use App\Entity\Post;
 use App\Form\CommentType;
 use App\Repository\PostRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,7 +51,7 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}", name="post_show", methods={"GET", "POST"})
      */
-    public function show(Post $post, Security $security, Request $request): Response
+    public function show(Post $post, Security $security, Request $request, PaginatorInterface $paginator): Response
     {
         $user = $security->getUser();
 
@@ -77,9 +78,15 @@ class PostController extends AbstractController
             $entityManager->flush();
         }
 
+        $pagination = $paginator->paginate(
+            $post->getComments(),
+            $request->query->getInt('page', 1),
+            6
+        );
+
         return $this->render('post/show.html.twig', [
             'post' => $post,
-            'comments' => $post->getComments(),
+            'comments' => $pagination,
             'comment_form' => $form->createView(),
         ]);
     }
