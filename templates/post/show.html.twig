@@ -55,6 +55,9 @@
             {% for comment in comments %}
                 {{ include('components/comment.html.twig', {'comment': comment}) }}
             {% endfor %}
+            <div class="navigation text-center d-flex justify-content-center">
+                {{ knp_pagination_render(comments) }}
+            </div>
         {% else %}
             <div class="text-center">
                 Комментариев не найдено!
