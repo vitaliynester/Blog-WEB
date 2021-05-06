@@ -1,40 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>TimeOnRead</th>
-                <th>Title</th>
-                <th>Body</th>
-                <th>CountView</th>
-                <th>DateOfCreation</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.timeOnRead }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.body }}</td>
-                <td>{{ post.countView }}</td>
-                <td>{{ post.dateOfCreation ? post.dateOfCreation|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
-                </td>
-            </tr>
+    <div class="container">
+        <h2 class="text-center mb-5">{{ title }}</h2>
+        {% if posts is not empty %}
+            {% for post in posts %}
+                {{ include('components/post-card.html.twig', {'post': post}) }}
+            {% endfor %}
+            <div class="navigation text-center d-flex justify-content-center">
+                {{ knp_pagination_render(posts) }}
+            </div>
         {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <div class="text-center home">
+                Постов не найдено!
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
