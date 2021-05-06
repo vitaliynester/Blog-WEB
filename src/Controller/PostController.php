@@ -23,9 +23,14 @@ class PostController extends AbstractController
      */
     public function index(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pageRequest = $request->query->getInt('page', 1);
+        if ($pageRequest <= 0) {
+            $pageRequest = 1;
+        }
+
         $pagination = $paginator->paginate(
             $postRepository->findBy([], ['dateOfCreation' => 'DESC']),
-            $request->query->getInt('page', 1),
+            $pageRequest,
             6
         );
         return $this->render('post/index.html.twig', [
@@ -39,9 +44,14 @@ class PostController extends AbstractController
      */
     public function mostViewed(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pageRequest = $request->query->getInt('page', 1);
+        if ($pageRequest <= 0) {
+            $pageRequest = 1;
+        }
+
         $pagination = $paginator->paginate(
             $postRepository->findBy([], ['countView' => 'DESC']),
-            $request->query->getInt('page', 1),
+            $pageRequest,
             6
         );
         return $this->render('post/index.html.twig', [
@@ -55,9 +65,14 @@ class PostController extends AbstractController
      */
     public function mostDiscussed(PostRepository $postRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        $pageRequest = $request->query->getInt('page', 1);
+        if ($pageRequest <= 0) {
+            $pageRequest = 1;
+        }
+
         $pagination = $paginator->paginate(
             $postRepository->findByCommentCount(),
-            $request->query->getInt('page', 1),
+            $pageRequest,
             6
         );
         return $this->render('post/index.html.twig', [
