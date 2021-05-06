@@ -104,6 +104,16 @@ class Post
         return $this;
     }
 
+    public function incrementCountView()
+    {
+        $currentCountView = $this->getCountView();
+        if ($currentCountView) {
+            $this->setCountView($currentCountView + 1);
+        } else {
+            $this->setCountView(1);
+        }
+    }
+
     public function getCountView(): ?int
     {
         return $this->countView;
