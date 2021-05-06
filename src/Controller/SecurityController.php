@@ -13,13 +13,14 @@ class SecurityController extends AbstractController
 {
     /**
      * Обработчик для страницы авторизации
+     *
      * @Route("/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // Если пользователь уже авторизован, то редиректим на главную страницу
         // Тем самым, ограничиваем доступ к странице авторизации
-        if ($this->getUser() !== null) {
+        if (null !== $this->getUser()) {
             return new RedirectResponse($this->generateUrl('app'));
         }
 
@@ -34,6 +35,7 @@ class SecurityController extends AbstractController
 
     /**
      * Обработчик для страницы выхода с аккаунта
+     *
      * @Route("/logout", name="app_logout")
      */
     public function logout()

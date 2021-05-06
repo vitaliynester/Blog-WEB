@@ -16,6 +16,7 @@ class RegistrationController extends AbstractController
 {
     /**
      * Обработчик для страницы регистрации
+     *
      * @Route("/register", name="app_register")
      */
     public function register(
@@ -26,7 +27,7 @@ class RegistrationController extends AbstractController
     ) {
         // Если пользователь уже авторизован, то редиректим на главную страницу
         // Тем самым, ограничиваем доступ к странице регистрации
-        if ($this->getUser() !== null) {
+        if (null !== $this->getUser()) {
             return new RedirectResponse($this->generateUrl('app'));
         }
         // Если пользователь не авторизован, то создаем новый экземпляр сущности
