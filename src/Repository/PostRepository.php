@@ -19,32 +19,20 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    // /**
-    //  * @return Post[] Returns an array of Post objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByCommentCount(): array
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $sql = '
+        SELECT p.id, p.owner_id, p.time_on_read, p.title, p.body, p.count_view, p.date_of_creation
+        FROM post as p
+        LEFT JOIN comment as c on p.id = c.post_id
+        GROUP BY p.id, p.owner_id, p.time_on_read, p.title, p.body, p.count_view, p.date_of_creation
+        ORDER BY count(c.id) DESC
+        ';
+        $conn = $this->getEntityManager()
+            ->getConnection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
-    /*
-    public function findOneBySomeField($value): ?Post
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $stmt->fetchAll();
     }
-    */
 }
