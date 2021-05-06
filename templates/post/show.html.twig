@@ -37,6 +37,20 @@
 
         <h2>Комментарии:</h2>
 
+        {{ form_start(comment_form) }}
+
+        <div class="form-group">
+            {{ form_label(comment_form.commentBody, null,
+                form_errors(comment_form.commentBody)|length ? { 'label_attr': {'class': 'text-danger'} } : {}) }}
+            {{ form_widget(comment_form.commentBody, form_errors(comment_form.commentBody)|length
+                ? {'attr': {'class': 'form-control is-invalid'}}
+                : {'attr': {'class': 'form-control'}} ) }}
+            <span class="text-danger register__error-label">{{ form_errors(comment_form.commentBody) }}</span>
+            {{ form_widget(comment_form.save) }}
+        </div>
+
+        {{ form_end(comment_form) }}
+
         {% if comments is not empty %}
             {% for comment in comments %}
                 {{ include('components/comment.html.twig', {'comment': comment}) }}
