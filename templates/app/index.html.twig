@@ -3,7 +3,33 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block body %}
-<div class="container home">
-    <h1>Данный сайт находится в разработке!</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 last-post pr-4">
+            <div class="last-post__title">
+                Что нового?
+            </div>
+            <div class="last-post__content">
+                С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения новых предложений.
+            </div>
+            <div class="last-post__btn">
+                <li class="nav-item m-0 mt-2">
+                    <a class="nav-link" href="{{ path('post_popular') }}">Просматриваемые</a>
+                </li>
+                <li class="nav-item m-0 mt-2">
+                    <a class="nav-link" href="{{ path('post_discussed') }}">Обсуждаемые</a>
+                </li>
+                <li class="nav-item m-0 mt-2">
+                    <a class="nav-link" href="{{ path('post_index') }}">Посмотреть все</a>
+                </li>
+            </div>
+        </div>
+        <div class="col-8">
+            {{ include('components/post-card.html.twig') }}
+            {{ include('components/post-card.html.twig') }}
+            {{ include('components/post-card.html.twig') }}
+            {{ include('components/post-card.html.twig') }}
+        </div>
+    </div>
 </div>
 {% endblock %}

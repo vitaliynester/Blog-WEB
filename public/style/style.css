@@ -101,6 +101,38 @@
   background-color: #3e8e41;
 }
 
+.post-card {
+  padding: 0;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.post-card__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.post-card__preview {
+  opacity: 0.7;
+}
+
+.post-card__date-of-creation {
+  opacity: 0.6;
+}
+
+.post-card__information {
+  margin: 0;
+  display: block;
+  margin-top: 10px;
+}
+
+.post-card__divider {
+  margin: 0px;
+  border: 1px solid grey;
+  width: 100%;
+}
+
 .login__btn {
   width: 100%;
 }
@@ -130,6 +162,42 @@
 
 .home h1 {
   text-align: center;
+}
+
+.last-post__title {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.last-post__content {
+  opacity: 0.8;
+}
+
+.last-post__btn {
+  margin: 0;
+  padding: 0;
+  padding-right: 2px;
+  list-style-type: none;
+}
+
+.last-post__btn li {
+  border: solid;
+  border-radius: 5px;
+  border-color: #222222;
+  border-width: 1px;
+  margin-left: 10px;
+}
+
+.last-post__btn li a {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-decoration: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .about__progress-gallery-img {
