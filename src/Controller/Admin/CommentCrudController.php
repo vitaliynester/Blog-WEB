@@ -16,12 +16,20 @@ class CommentCrudController extends AbstractCrudController
         return Comment::class;
     }
 
+    /**
+     * Отображаем только необходимые поля в админ панели
+     *
+     * @param string $pageName (название страницы по которой переходим)
+     * @return iterable (список элементов для отображения сущности комментария)
+     */
     public function configureFields(string $pageName): iterable
     {
+        // Идентификатор комментария скрываем при добавлении и редактировании
         yield IdField::new('id')->hideOnForm();
         yield AssociationField::new('post');
         yield AssociationField::new('owner');
         yield DateTimeField::new('dateOfCreation');
+        // Тело комментария скрываем в отображаемом списке
         yield TextField::new('body')->hideOnIndex();
     }
 }
