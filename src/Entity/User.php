@@ -71,17 +71,25 @@ class User implements UserInterface
     private ?string $patronymic;
 
     /**
+     * Список постов данного пользователя
+     *
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="owner", orphanRemoval=true)
      */
     private Collection $posts;
 
     /**
+     * Список комментариев данного пользователя
+     *
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="owner", orphanRemoval=true)
      */
     private Collection $comments;
 
+    /**
+     * Конструктор сущности пользователь
+     */
     public function __construct()
     {
+        // Для постов и комментариев устанавливаем пустые массивы
         $this->posts = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
@@ -294,13 +302,22 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Post[]
+     * Получение всех постов созданных пользователем
+     *
+     * @return Collection|Post[] (список постов пользователя)
      */
     public function getPosts(): Collection
     {
         return $this->posts;
     }
 
+    /**
+     * Добавление нового поста пользователю
+     *
+     * @param Post $post (пост для добавления)
+     *
+     * @return $this (обновленная сущность пользователя)
+     */
     public function addPost(Post $post): self
     {
         if (!$this->posts->contains($post)) {
@@ -311,10 +328,16 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Удаление определенного поста у пользователя
+     *
+     * @param Post $post (пост для удаления)
+     *
+     * @return $this (обновленная сущность пользователя)
+     */
     public function removePost(Post $post): self
     {
         if ($this->posts->removeElement($post)) {
-            // set the owning side to null (unless already changed)
             if ($post->getOwner() === $this) {
                 $post->setOwner(null);
             }
@@ -324,13 +347,22 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Comment[]
+     * Получение списка комментариев пользователя
+     *
+     * @return Collection|Comment[] (список комментариев пользователя)
      */
     public function getComments(): Collection
     {
         return $this->comments;
     }
 
+    /**
+     * Добавление нового комментария к пользователю
+     *
+     * @param Comment $comment (комментарий для добавления)
+     *
+     * @return $this (обновленная сущность пользователя)
+     */
     public function addComment(Comment $comment): self
     {
         if (!$this->comments->contains($comment)) {
@@ -341,10 +373,16 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Удаление определенного комментария от пользователя
+     *
+     * @param Comment $comment (комментарий для удаления)
+     *
+     * @return $this (обновленная сущность пользователя)
+     */
     public function removeComment(Comment $comment): self
     {
         if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
             if ($comment->getOwner() === $this) {
                 $comment->setOwner(null);
             }
@@ -353,6 +391,11 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Метод для преобразования пользователя к строке
+     *
+     * @return string|null (представление пользователя в виде строки)
+     */
     public function __toString()
     {
         return $this->email;
