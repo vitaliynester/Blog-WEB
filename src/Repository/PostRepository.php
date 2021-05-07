@@ -19,8 +19,16 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
+    /**
+     * Метод для получения списка постов отсортированных по количеству комментариев
+     *
+     * @return array (массив сущностей постов)
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
     public function findByCommentCount(): array
     {
+        // Запрос для получения списка постов по количеству комментариев
         $sql = '
         SELECT p.id
         FROM post as p
@@ -28,19 +36,24 @@ class PostRepository extends ServiceEntityRepository
         GROUP BY p.id
         ORDER BY count(c.id) DESC
         ';
-        $conn = $this->getEntityManager()
-            ->getConnection();
+        // Выполняем SQL запрос для получения постов
+        $conn = $this->getEntityManager()->getConnection();
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
         $resultFromQuery = $stmt->fetchAll();
+
+        // Получаем репозиторий поста
         $repos = $this->getEntityManager()->getRepository('App:Post');
         $result = [];
+        // Проходимся по массиву с полученными постами
         foreach ($resultFromQuery as $postRaw) {
+            // Ищем посты с указанным ID
             $post = $repos->findOneBy(['id' => $postRaw['id']]);
+            // Добавляем найденный пост в массив результата
             $result[] = $post;
         }
 
+        // Возвращаем массив найденных постов
         return $result;
     }
 }
