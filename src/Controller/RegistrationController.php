@@ -49,8 +49,6 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            // После установки пароля устанавливаем регистрируемому пользователю роль пользователя
-            $user->setRoles(['ROLE_USER']);
 
             // Вызываем доктрину (ORM)
             $entityManager = $this->getDoctrine()->getManager();
