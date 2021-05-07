@@ -14,10 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     /**
+     * Обработчик перехода на страницу админ панели
+     *
      * @Route("/admin", name="admin")
      */
     public function index(): Response
     {
+        // После перехода на страницу /admin отображаем CRUD для сущности пользователя
         $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
         return $this->redirect($routeBuilder->setController(UserCrudController::class)->generateUrl());
     }
@@ -28,6 +31,11 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Blog');
     }
 
+    /**
+     * Настройка списка бокового меню в админке
+     *
+     * @return iterable (элементы списка бокового меню)
+     */
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Пользователи', 'fa fa-users');
