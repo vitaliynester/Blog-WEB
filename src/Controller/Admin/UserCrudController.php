@@ -17,17 +17,33 @@ class UserCrudController extends AbstractCrudController
         return User::class;
     }
 
+    /**
+     * Отключаем некоторые возможности взаимодействия с сущностью
+     *
+     * @param Actions $actions (массив действий с сущностью)
+     * @return Actions (новый массив действий с сущностью)
+     */
     public function configureActions(Actions $actions): Actions
     {
+        // Отключаем возможность создания и удаления пользователей
         return $actions
             ->disable(Action::NEW, Action::DELETE);
     }
 
+    /**
+     * Отображаем только необходимые поля в админ панели
+     *
+     * @param string $pageName (название страницы по которой переходим)
+     * @return iterable (список элементов для отображения сущности пользователя)
+     */
     public function configureFields(string $pageName): iterable
     {
+        // Идентификатор пользователя скрываем при добавлении и редактировании
         yield IdField::new('id')->hideOnForm();
         yield TextField::new('email');
+        // Идентификатор пользователя скрываем в списке отображения
         yield ArrayField::new('roles')->hideOnIndex();
+        // Идентификатор пользователя скрываем при добавлении, редактировании и списке отображения
         yield TextField::new('password')->hideOnIndex()->hideOnForm();
         yield TextField::new('lastName');
         yield TextField::new('firstName');
