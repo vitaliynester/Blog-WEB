@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres:
     container_name: blog_db
-    image: postgres
+    build: postgres
     restart: always
     ports:
       - '5435:5432'
